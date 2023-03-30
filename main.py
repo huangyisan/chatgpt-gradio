@@ -32,6 +32,6 @@ def setup_gradio_gui():
         output = gr.Textbox(label="回答",type="text")
         greet_btn = gr.Button("提交")
         greet_btn.click(fn=send_ChatGPT, inputs=name, outputs=output)
-    gui.launch()
-    
+    gui.launch(server_port=8881)
+
 setup_gradio_gui()
