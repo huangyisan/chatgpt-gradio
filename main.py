@@ -26,8 +26,6 @@ def send_ChatGPT(message):
     print(response.text)
     return response.json()["choices"][0]["message"]["content"]
 
-
-import gradio as gr
 def setup_gradio_gui():
     with gr.Blocks() as gui:
         name = gr.Textbox(label="提问", lines=2, placeholder="在这里输入你要提问的内容",type="text")
@@ -35,4 +33,5 @@ def setup_gradio_gui():
         greet_btn = gr.Button("提交")
         greet_btn.click(fn=send_ChatGPT, inputs=name, outputs=output)
     gui.launch()
+    
 setup_gradio_gui()
