@@ -1,6 +1,6 @@
 import openai
 openai.api_key = 'anything'
-openai.base_url = "https://chatgpt.iostat.io/v1/"
+openai.base_url = "http://localhost:3040/v1/"
 def send_ChatGPT(message):
     stream = openai.chat.completions.create(
         model="gpt-3.5-turbo",
